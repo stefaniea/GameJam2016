@@ -18,4 +18,17 @@ public class DartScript : MonoBehaviour
         rb.rotation = Quaternion.LookRotation(vel);
       //  print("update rotation vel is " + vel.x + " " + vel.y + " " + vel.z);
     }
+    void explode(Vector3 position)
+    {
+
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        print("collide with wall");
+        if (collision.gameObject.name == "balloon")
+        {
+            explode(collision.gameObject.transform.position);
+        }
+    }
 }
