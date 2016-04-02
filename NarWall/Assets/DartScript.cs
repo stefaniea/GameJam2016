@@ -16,6 +16,6 @@ public class DartScript : MonoBehaviour
         // align dart with velocity vector
         Vector3 vel = rb.velocity;
         rb.rotation = Quaternion.LookRotation(vel);
-        print("update rotation vel is " + vel.x + " " + vel.y + " " + vel.z);
+      //  print("update rotation vel is " + vel.x + " " + vel.y + " " + vel.z);
     }
 }

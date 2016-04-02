@@ -30,6 +30,7 @@ public class Dart : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        updateDartRotation();
 
         if (Input.GetMouseButtonUp(0) && startDrag)
         {
@@ -37,12 +38,12 @@ public class Dart : MonoBehaviour
 			GameObject shoot = (GameObject)Instantiate(ammo, transform.position, transform.rotation);
             shoot.GetComponent<Rigidbody>().detectCollisions = true;
             shoot.GetComponent<Rigidbody>().velocity = -20 * shoot.transform.forward;
+            
           //  shoot.GetComponent<Rigidbody>().AddRelativeForce(0f, 0f, -50f);
            // shoot.GetComponent<Rigidbody>().AddRelativeForce(0f, -3*9.81f, 0f);
         }
         else if (Input.GetMouseButtonDown(0) || startDrag)
         {
-            updateDartRotation();
             startDrag = true;
         }
     }
