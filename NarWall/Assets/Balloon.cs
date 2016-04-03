@@ -7,9 +7,18 @@ public class Balloon : MonoBehaviour {
 	void Start () {
 	
 	}
-	
+	public void DestroyBalloonDelay()
+    {
+        Invoke("DestroyThis", 1);
+    }
+
+    public void DestroyThis()
+    {
+        print("DESTROYY");
+        Destroy(gameObject);
+    }
 	// Update is called once per frame
 	void Update () {
-	
+	    
 	}
 }

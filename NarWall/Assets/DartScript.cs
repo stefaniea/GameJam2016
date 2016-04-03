@@ -26,9 +26,17 @@ public class DartScript : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         print("collide with wall");
-        if (collision.gameObject.name == "balloon")
+        if (collision.gameObject.name == "Balloon")
         {
+            print("BALLOON");
             explode(collision.gameObject.transform.position);
+            var em = collision.gameObject.GetComponent<ParticleSystem>().emission;
+            em.enabled = true;
+            collision.gameObject.GetComponent<ParticleSystem>().Play();
+
+            collision.gameObject.GetComponent<Balloon>().DestroyBalloonDelay();
+
+
         }
     }
 }
