@@ -37,7 +37,7 @@ public class Dart : MonoBehaviour
             startDrag = false;
 			GameObject shoot = (GameObject)Instantiate(ammo, transform.position, transform.rotation);
             shoot.GetComponent<Rigidbody>().detectCollisions = true;
-            shoot.GetComponent<Rigidbody>().velocity = -20 * shoot.transform.forward;
+            shoot.GetComponent<Rigidbody>().velocity = -30 * shoot.transform.forward;
             
           //  shoot.GetComponent<Rigidbody>().AddRelativeForce(0f, 0f, -50f);
            // shoot.GetComponent<Rigidbody>().AddRelativeForce(0f, -3*9.81f, 0f);
