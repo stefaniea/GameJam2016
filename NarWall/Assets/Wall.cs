@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class Wall : MonoBehaviour {
+    public Text time;
 
 	// Use this for initialization
 	void Start () {
@@ -10,7 +12,7 @@ public class Wall : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    
+        time.text = Time.time.ToString();
 	}
 
     void OnCollisionEnter(Collision collision)
