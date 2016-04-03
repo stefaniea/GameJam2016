@@ -21,7 +21,7 @@ public class Dart : MonoBehaviour
 
         float yRotation = v3.x*15f;
         float xRotation = -v3.y*15f;
-        print("x rotation" + xRotation);
+      //  print("x rotation" + xRotation);
 
         this.GetComponent<Rigidbody>().rotation = Quaternion.Euler(xRotation, yRotation, 0);
         
