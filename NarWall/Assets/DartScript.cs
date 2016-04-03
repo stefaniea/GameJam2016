@@ -4,6 +4,7 @@ using System.Collections;
 public class DartScript : MonoBehaviour
 {
     Rigidbody rb;
+    public int countBalloon;
 
 	// Use this for initialization
 	void Start () {
@@ -26,15 +27,19 @@ public class DartScript : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         print("collide with wall");
-        if (collision.gameObject.name == "Balloon")
+        if (collision.gameObject.name != "Wall")
         {
             print("BALLOON");
             explode(collision.gameObject.transform.position);
             var em = collision.gameObject.GetComponent<ParticleSystem>().emission;
             em.enabled = true;
             collision.gameObject.GetComponent<ParticleSystem>().Play();
-
             collision.gameObject.GetComponent<Balloon>().DestroyBalloonDelay();
+            countBalloon--;
+            if (countBalloon == 0)
+            {
+                
+            }
 
 
         }

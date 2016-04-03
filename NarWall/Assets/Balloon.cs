@@ -15,6 +15,7 @@ public class Balloon : MonoBehaviour {
     public void DestroyThis()
     {
         print("DESTROYY");
+        Transform parent;
         Destroy(gameObject);
     }
 	// Update is called once per frame
