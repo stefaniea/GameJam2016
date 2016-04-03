@@ -33,6 +33,8 @@ public class DartScript : MonoBehaviour
             explode(collision.gameObject.transform.position);
             var em = collision.gameObject.GetComponent<ParticleSystem>().emission;
             em.enabled = true;
+            // hide balloon mesh and play explosion
+            collision.gameObject.transform.Find("narwhal").localScale = new Vector3(0, 0, 0);
             collision.gameObject.GetComponent<ParticleSystem>().Play();
             collision.gameObject.GetComponent<Balloon>().DestroyBalloonDelay();
             countBalloon--;
